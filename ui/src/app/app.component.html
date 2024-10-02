@@ -1,0 +1,23 @@
+<div>
+  <h2>Enter a Positive Number</h2>
+  <form (submit)="onSubmit()">
+    <input
+      type="number"
+      [(ngModel)]="inputNumber"
+      name="numberInput"
+      required
+      min="0"
+      placeholder="Positive number"
+    />
+    <button type="submit">Submit</button>
+  </form>
+
+  <div *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</div>
+
+  <div *ngIf="apiResult">
+    <h3>API Result:</h3>
+    <p>Number: {{ apiResult.n }}</p>
+    <p>Result: {{ apiResult.result }}</p>
+  </div>
+  
+</div>
